@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/ubuntu/File-Transfer'
+make: Leaving directory '/home/ubuntu/File-Transfer'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+

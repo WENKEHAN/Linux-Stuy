@@ -10,9 +10,6 @@ char *get_cmd(char buff[],char *argv[]){
     char *p=NULL;//记录当前字符串分割的位置
     char *s=NULL;//记录每次返回的字符串
     s=strtok_r(buff,' ',&p);
-    while(p!=NULL){
-        strtok(buff,'\0');
-    }
 }
 void *work_thread(void *arg){
     int c=(int )arg;
