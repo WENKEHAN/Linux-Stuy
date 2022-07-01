@@ -3,6 +3,7 @@
 #define ARG_MAX 10
 #define FILEERR "err"
 #define OPENERR  "不存在这个文件"
+#define OK "OK#"
 //下载函数--c 表示文件描述符
 // void recv_file(int c,char *filename){
 //     if(filename==NULL){
@@ -28,15 +29,14 @@ char *get_cmd(char buff[],char *argv[]){
     s=strtok_r(buff," ",&p);
     while (s!=NULL)
     {
-        /* code */\
+        /* code */
         //将分割后的字符串保存到argv中
         argv[i++]=s;
-        s=strtok_r(buff," ",&p);
+        s=strtok_r(NULL," ",&p);
     }
     return argv[0];//命令
 }
 void *work_thread(void *arg){
-    
     //int c=*((int *)arg);
     int c=(int)arg;
     while(1){
@@ -68,6 +68,7 @@ void *work_thread(void *arg){
             pid_t pid=fork();
             if(pid==-1){
                 send(c,"FORK_ERR",8,0);
+                continue;
             }
             //fork-child 替换标准输出--exec()--在子进程中
             if(pid==0){
@@ -83,8 +84,8 @@ void *work_thread(void *arg){
             close(pipfd[1]);//关闭管道的写端
             wait(NULL);
             //获取管道中的数据--无论是否有数据都给客户端进行回复--如果管道中没有数据--则发送不出去-所以在这里前置
-            char read_buff[1024]={"OK#"};
-            read(pipfd[0],read_buff+strlen("OK#"),1021);
+            char read_buff[1024]={OK};
+            read(pipfd[0],read_buff+strlen(OK),1021);
             close(pipfd[0]);
             send(c,read_buff,strlen(read_buff),0);
         }
@@ -99,5 +100,5 @@ void *work_thread(void *arg){
 }
 void start_thread(int c){
     pthread_t id;
-    pthread_create(&id,NULL,work_thread,(void*)&c);
+    pthread_create(&id,NULL,work_thread,(void*)c);
 }

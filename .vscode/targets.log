@@ -2,53 +2,100 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
+ 
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Fri Jul  1 09:37:50 2022
+ 
+# Make data base, printed on Fri Jul  1 11:19:36 2022
+ 
 
 # Variables
+ 
 
+ 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
+ 
 ?F = $(notdir $?)
+ 
 # default
+ 
 .SHELLFLAGS := -c
+ 
 # environment
+ 
 XDG_SESSION_CLASS = user
+ 
 # environment
+ 
 VSCODE_AGENT_FOLDER = /home/ubuntu/.vscode-server
+ 
 # environment
+ 
 XDG_SESSION_TYPE = tty
+ 
 # environment
+ 
 VSCODE_LOG_NATIVE = false
+ 
 # automatic
+ 
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # automatic
+ 
 @D = $(patsubst %/,%,$(dir $@))
+ 
 # automatic
+ 
 @F = $(notdir $@)
+ 
 # default
+ 
 MAKE_VERSION := 4.2.1
+ 
 # makefile
+ 
 CURDIR := /home/ubuntu/File-Transfer
+ 
 # makefile
+ 
 SHELL = /bin/sh
+ 
 # environment
+ 
 VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_translationsConfigFile":"/home/ubuntu/.vscode-server/data/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/tcf.json","_cacheRoot":"/home/ubuntu/.vscode-server/data/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn","_resolvedLanguagePackCoreLocation":"/home/ubuntu/.vscode-server/data/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/30d9c6cd9483b2cc586687151bcbcd635f373630","_corruptedFile":"/home/ubuntu/.vscode-server/data/clp/bbca1a7059cee8a1b93da8947fee1c4f.zh-cn/corrupted.info","_languagePackSupport":true}
+ 
 # environment
+ 
 _ = /home/ubuntu/.vscode-server/bin/30d9c6cd9483b2cc586687151bcbcd635f373630/node
+ 
 # makefile
+ 
 MAKEFILE_LIST := 
+ 
 # 'override' directive
+ 
 GNUMAKEFLAGS := 
+ 
 # environment
+ 
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+ 
 # environment
+ 
 VSCODE_VERBOSE_LOGGING = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
@@ -221,6 +268,6 @@ GNUmakefile:
 # strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=1/17=6%
-# Finished Make data base on Fri Jul  1 09:37:50 2022
+# Finished Make data base on Fri Jul  1 11:19:36 2022
 
  

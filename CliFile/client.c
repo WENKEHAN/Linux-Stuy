@@ -28,8 +28,9 @@ int main(){
     memset(&saddr,0,sizeof(saddr));
     saddr.sin_family=AF_INET;
     saddr.sin_port=htons(6000);
-    saddr.sin_addr.s_addr=inet_addr("124.223.7.124");
-    int res=connect(sockfd,(struct sockaddr *)&saddr,sizeof(saddr));
+    saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
+    //链接错误-先ping网络--再检查 ip  --再检查 服务端端
+    int res=connect(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
     if(res==-1){
         close(sockfd);
         exit(0);
@@ -62,7 +63,7 @@ int main(){
             char read_buff[1024]={0};
             //读取服务器返回的结果
             int num=recv(sockfd,read_buff,1023,0);
-            if(num<=0){
+            if(num<0){
                 break;
             }
             if(strncmp(read_buff,OK,strlen(OK))==0){
